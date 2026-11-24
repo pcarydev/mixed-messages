@@ -1,14 +1,14 @@
 const messages = {
     subjects: [
-        "Your next JavaScript project ",
-        "Your GitHub repository ",
-        "Your latest coding session "
+        "Your next JavaScript project",
+        "Your GitHub repository",
+        "Your latest coding session"
     ],
 
     predictions: [
-        "will finally start making sense ",
-        "will introduce you to a mysterious bug ",
-        "will teach you something valuable "
+        "will finally start making sense",
+        "will introduce you to a mysterious bug",
+        "will teach you something valuable"
     ],
 
     endings: [
@@ -18,19 +18,27 @@ const messages = {
     ]
 };
 
+let randomSubject;
+let randomPrediction;
+let randomEnding;
+
 for (let key in messages) {
 
     switch (key) {
         case 'subjects':
-            const randomSubject = Math.floor(Math.random() * messages.subjects.length);
+            randomSubject = messages.subjects[Math.floor(Math.random() * messages.subjects.length)];
             break;
         
         case 'predictions':
-            const randomPrediction = Math.floor(Math.random() * messages.predictions.length);
+            randomPrediction = messages.predictions[Math.floor(Math.random() * messages.predictions.length)];
             break;
 
         case 'endings': 
-            const randomEnding = Math.floor(Math.random() * messages.endings.length);
+            randomEnding = messages.endings[Math.floor(Math.random() * messages.endings.length)];
             break;
     }
 }
+
+const completeMessage = `${randomSubject} ${randomPrediction} ${randomEnding}`;
+
+console.log(completeMessage);

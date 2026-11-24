@@ -16,4 +16,21 @@ const messages = {
         "after several cups of coffee.",
         "when you least expect it."
     ]
+};
+
+for (let key in messages) {
+
+    switch (key) {
+        case 'subjects':
+            const randomSubject = Math.floor(Math.random() * messages.subjects.length);
+            break;
+        
+        case 'predictions':
+            const randomPrediction = Math.floor(Math.random() * messages.predictions.length);
+            break;
+
+        case 'endings': 
+            const randomEnding = Math.floor(Math.random() * messages.endings.length);
+            break;
+    }
 }
